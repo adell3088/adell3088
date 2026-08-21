@@ -15,8 +15,8 @@
 body{
     min-height:100vh;
     background:#111;
-    font-family:Tahoma,Arial,sans-serif;
     color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -25,17 +25,13 @@ body{
 .page{
     width:100%;
     max-width:430px;
-    min-height:100vh;
-    padding:18px 18px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    padding:15px 16px;
 }
 
 /* لوگو */
-.logo-box{
+.logo-area{
     text-align:center;
-    margin-bottom:16px;
+    margin-bottom:10px;
 }
 
 .logo{
@@ -44,67 +40,61 @@ body{
     object-fit:contain;
     border-radius:50%;
     background:#fff;
-    padding:5px;
-    box-shadow:0 0 0 4px #f5c400,
-               0 8px 25px rgba(0,0,0,.4);
+    border:4px solid #f5c400;
+    box-shadow:0 6px 22px rgba(0,0,0,.45);
 }
 
 /* عنوان */
 .title{
     text-align:center;
-    margin-bottom:16px;
+    margin-bottom:13px;
 }
 
 .title h1{
-    font-size:25px;
-    color:#f5c400;
+    font-size:24px;
     font-weight:900;
+    color:#f5c400;
 }
 
 .title p{
-    font-size:11px;
-    color:#aaa;
-    margin-top:5px;
+    margin-top:4px;
+    color:#ddd;
+    font-size:12px;
 }
 
-/* لینک ها */
+/* لینک‌ها */
 .links{
     display:flex;
     flex-direction:column;
-    gap:9px;
+    gap:8px;
 }
 
 .link{
-    height:57px;
-    width:100%;
-    border-radius:16px;
+    height:55px;
+    display:flex;
+    align-items:center;
     text-decoration:none;
     color:#fff;
     background:#202020;
-    border:1px solid #333;
-    display:flex;
-    align-items:center;
-    padding:6px 9px;
-    transition:.2s;
-}
-
-.link:active{
-    transform:scale(.98);
+    border:1px solid #343434;
+    border-radius:15px;
+    padding:5px 9px;
 }
 
 .icon{
-    width:45px;
-    height:45px;
-    border-radius:13px;
+    width:43px;
+    height:43px;
+    min-width:43px;
+    border-radius:12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-left:11px;
+    margin-left:10px;
 }
 
 .icon svg{
-    width:25px;
-    height:25px;
+    width:24px;
+    height:24px;
 }
 
 .instagram{
@@ -127,46 +117,45 @@ body{
 .info strong{
     display:block;
     font-size:13px;
-    margin-bottom:3px;
 }
 
 .info span{
     display:block;
-    font-size:10px;
     color:#999;
+    font-size:10px;
+    margin-top:3px;
     direction:ltr;
     text-align:right;
 }
 
 .arrow{
     color:#777;
-    font-size:22px;
-    padding-left:5px;
+    font-size:21px;
 }
 
 /* آدرس */
 .address{
-    margin-top:9px;
-    min-height:57px;
-    border-radius:16px;
+    margin-top:8px;
+    height:55px;
+    border-radius:15px;
     background:#f5c400;
     color:#111;
     display:flex;
     align-items:center;
-    padding:7px 10px;
+    padding:5px 9px;
 }
 
 .address-icon{
     width:43px;
     height:43px;
     min-width:43px;
-    border-radius:12px;
     background:#111;
     color:#f5c400;
+    border-radius:12px;
     display:flex;
-    justify-content:center;
     align-items:center;
-    margin-left:11px;
+    justify-content:center;
+    margin-left:10px;
 }
 
 .address-icon svg{
@@ -177,30 +166,27 @@ body{
 .address-text strong{
     display:block;
     font-size:12px;
-    margin-bottom:4px;
 }
 
 .address-text span{
+    display:block;
     font-size:10px;
     font-weight:bold;
+    margin-top:4px;
 }
 
-/* پایین صفحه */
 .footer{
     text-align:center;
     color:#666;
     font-size:9px;
-    margin-top:12px;
-}
-
-.footer b{
-    color:#f5c400;
+    margin-top:9px;
 }
 
 @media(max-height:650px){
+
     .page{
-        padding-top:10px;
-        padding-bottom:10px;
+        padding-top:8px;
+        padding-bottom:8px;
     }
 
     .logo{
@@ -208,37 +194,32 @@ body{
         height:82px;
     }
 
-    .logo-box{
-        margin-bottom:8px;
+    .logo-area{
+        margin-bottom:5px;
     }
 
     .title{
-        margin-bottom:9px;
+        margin-bottom:8px;
     }
 
     .title h1{
         font-size:21px;
     }
 
-    .links{
-        gap:6px;
-    }
-
     .link,
     .address{
-        height:51px;
-        min-height:51px;
+        height:48px;
     }
 
     .icon,
     .address-icon{
-        width:39px;
-        height:39px;
-        min-width:39px;
+        width:37px;
+        height:37px;
+        min-width:37px;
     }
 
     .footer{
-        margin-top:7px;
+        margin-top:5px;
     }
 }
 </style>
@@ -249,32 +230,39 @@ body{
 <div class="page">
 
     <!-- لوگوی اصلی -->
-    <div class="logo-box">
-        <img src="logo.png"
+    <div class="logo-area">
+        <img src="logo.jpg"
              class="logo"
-             alt="لوگوی املاک عادل"
-             onerror="this.style.display='none';">
+             alt="املاک عادل">
     </div>
 
+    <!-- عنوان -->
     <div class="title">
         <h1>املاک عادل</h1>
-        <p>خرید و فروش مطمئن ملک</p>
+        <p>خرید و فروش ملک</p>
     </div>
 
     <div class="links">
 
-        <!-- Instagram -->
+        <!-- اینستاگرام -->
         <a class="link"
            href="https://www.instagram.com/amlak_adel_1370/"
            target="_blank">
 
             <div class="icon instagram">
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke="white" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="white"
+                     stroke-width="2">
+                    <rect x="3" y="3"
+                          width="18"
+                          height="18"
+                          rx="5"/>
                     <circle cx="12" cy="12" r="4"/>
-                    <circle cx="17.5" cy="6.5" r="1"
-                            fill="white" stroke="none"/>
+                    <circle cx="17.5" cy="6.5"
+                            r="1"
+                            fill="white"
+                            stroke="none"/>
                 </svg>
             </div>
 
@@ -287,7 +275,7 @@ body{
         </a>
 
 
-        <!-- Eitaa -->
+        <!-- ایتا -->
         <a class="link"
            href="https://eitaa.com/adell3088"
            target="_blank">
@@ -301,13 +289,13 @@ body{
                      stroke-linejoin="round">
 
                     <path d="M21.2 3.7L3.4 10.8
-                             c-.8.3-.8 1.4 0 1.7
-                             l5.1 1.9 1.9 5.5
-                             c.2.7 1.1.9 1.6.3
-                             l2.7-3.1 3.8 2.4
-                             c.7.4 1.5.1 1.7-.7
-                             l2.8-14.1
-                             c.2-.8-.4-1.3-.7-1z"/>
+                    c-.8.3-.8 1.4 0 1.7
+                    l5.1 1.9 1.9 5.5
+                    c.2.7 1.1.9 1.6.3
+                    l2.7-3.1 3.8 2.4
+                    c.7.4 1.5.1 1.7-.7
+                    l2.8-14.1
+                    c.2-.8-.4-1.3-.7-1z"/>
 
                     <path d="M8.5 14.4L18.4 7.2"/>
                 </svg>
@@ -322,7 +310,7 @@ body{
         </a>
 
 
-        <!-- Phone 1 -->
+        <!-- شماره اول -->
         <a class="link" href="tel:09915022443">
 
             <div class="icon phone">
@@ -357,7 +345,7 @@ body{
         </a>
 
 
-        <!-- Phone 2 -->
+        <!-- شماره دوم -->
         <a class="link" href="tel:09925828785">
 
             <div class="icon phone">
@@ -394,10 +382,11 @@ body{
     </div>
 
 
-    <!-- Address -->
+    <!-- آدرس -->
     <div class="address">
 
         <div class="address-icon">
+
             <svg viewBox="0 0 24 24"
                  fill="none"
                  stroke="currentColor"
@@ -408,7 +397,9 @@ body{
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10
                          a8 8 0 1 1 16 0z"/>
                 <circle cx="12" cy="10" r="2.5"/>
+
             </svg>
+
         </div>
 
         <div class="address-text">
@@ -420,7 +411,7 @@ body{
 
 
     <div class="footer">
-        <b>املاک عادل</b> | همراه مطمئن شما در معاملات ملکی
+        <b>املاک عادل</b>
     </div>
 
 </div>
