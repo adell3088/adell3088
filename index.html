@@ -1,417 +1,522 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>املاک عادل | خرید و فروش ملک</title>
+<title>املاک عادل | خرید و فروش ملک</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#111;
+    color:#fff;
+    min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:480px;
+    margin:auto;
+    padding:22px 16px 35px;
+}
+
+/* Header */
+.header{
+    background:linear-gradient(145deg,#f5c400,#ffdf4d);
+    color:#111;
+    border-radius:28px;
+    padding:28px 20px 24px;
+    text-align:center;
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
+    position:relative;
+    overflow:hidden;
+}
+
+.header:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    top:-100px;
+    left:-70px;
+}
+
+.logo{
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    background:#111;
+    margin:0 auto 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:5px solid rgba(255,255,255,.9);
+    box-shadow:0 7px 20px rgba(0,0,0,.25);
+    position:relative;
+    z-index:2;
+}
+
+.logo span{
+    font-size:27px;
+    font-weight:900;
+    color:#f5c400;
+}
+
+.header h1{
+    font-size:29px;
+    font-weight:900;
+    position:relative;
+    z-index:2;
+}
+
+.header p{
+    margin-top:9px;
+    font-size:14px;
+    font-weight:bold;
+    opacity:.85;
+    position:relative;
+    z-index:2;
+}
+
+/* Main */
+.main{
+    margin-top:18px;
+}
+
+.intro{
+    background:#1c1c1c;
+    border:1px solid #303030;
+    border-radius:22px;
+    padding:20px;
+    text-align:center;
+}
+
+.intro h2{
+    color:#f5c400;
+    font-size:19px;
+    margin-bottom:9px;
+}
+
+.intro p{
+    color:#ccc;
+    font-size:13px;
+    line-height:2;
+}
+
+/* Buttons */
+.buttons{
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.link{
+    text-decoration:none;
+    color:#fff;
+    background:#1d1d1d;
+    border:1px solid #333;
+    border-radius:19px;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    transition:.25s;
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+}
+
+.link:hover{
+    transform:translateY(-2px);
+    border-color:#f5c400;
+    background:#242424;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.icon svg{
+    width:27px;
+    height:27px;
+}
+
+.phone{
+    background:#f5c400;
+    color:#111;
+}
+
+.instagram{
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+    color:white;
+}
+
+.eitaa{
+    background:#159bd7;
+    color:white;
+}
+
+.text{
+    flex:1;
+}
+
+.text strong{
+    display:block;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.text small{
+    display:block;
+    color:#999;
+    font-size:11px;
+    direction:ltr;
+    text-align:right;
+}
+
+.arrow{
+    color:#777;
+    font-size:22px;
+}
+
+/* Address */
+.address{
+    margin-top:18px;
+    background:#f5c400;
+    color:#111;
+    border-radius:22px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.address-icon{
+    width:46px;
+    height:46px;
+    min-width:46px;
+    background:#111;
+    color:#f5c400;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.address-icon svg{
+    width:25px;
+    height:25px;
+}
+
+.address strong{
+    display:block;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.address span{
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#777;
+    font-size:11px;
+}
+
+.footer b{
+    color:#f5c400;
+}
+
+/* Responsive */
+@media(max-width:360px){
+    .header h1{
+        font-size:25px;
     }
 
-    body {
-      margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #f4f4f4;
-      color: #171717;
+    .container{
+        padding:16px 12px 25px;
     }
-
-    .page {
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 20px 14px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 440px;
-      background: #ffffff;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-    }
-
-    /* قسمت بالای صفحه */
-    .header {
-      background: #f4c400;
-      padding: 34px 20px 28px;
-      text-align: center;
-      position: relative;
-    }
-
-    .header::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 18px;
-      background: white;
-      border-radius: 50% 50% 0 0;
-    }
-
-    .logo {
-      width: 125px;
-      height: 125px;
-      object-fit: contain;
-      background: white;
-      border-radius: 24px;
-      padding: 6px;
-      display: block;
-      margin: 0 auto 15px;
-      box-shadow: 0 7px 20px rgba(0,0,0,0.18);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 29px;
-      font-weight: 900;
-    }
-
-    .subtitle {
-      margin-top: 8px;
-      font-size: 15px;
-      font-weight: bold;
-    }
-
-    .content {
-      padding: 12px 20px 25px;
-    }
-
-    .section-title {
-      font-size: 14px;
-      font-weight: bold;
-      color: #777;
-      margin: 8px 4px 12px;
-    }
-
-    /* دکمه ها */
-    .button {
-      width: 100%;
-      min-height: 60px;
-      margin: 11px 0;
-      border-radius: 17px;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      padding: 10px 17px;
-      transition: 0.2s;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .button:active {
-      transform: scale(0.98);
-    }
-
-    .icon-box {
-      width: 42px;
-      height: 42px;
-      border-radius: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 12px;
-      flex-shrink: 0;
-    }
-
-    .button-text {
-      flex: 1;
-      text-align: right;
-    }
-
-    .arrow {
-      font-size: 20px;
-      opacity: 0.5;
-    }
-
-    /* اینستاگرام */
-    .instagram {
-      background: #fff1f7;
-      color: #171717;
-    }
-
-    .instagram .icon-box {
-      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    }
-
-    /* آیکون Instagram */
-    .instagram-icon {
-      width: 25px;
-      height: 25px;
-    }
-
-    /* ایتا */
-    .eitaa {
-      background: #fff9d9;
-      color: #171717;
-    }
-
-    .eitaa .icon-box {
-      background: #f4c400;
-    }
-
-    .eitaa-icon {
-      width: 28px;
-      height: 28px;
-    }
-
-    /* تلفن */
-    .phone {
-      background: #f7f7f7;
-      color: #171717;
-    }
-
-    .phone .icon-box {
-      background: #f4c400;
-      font-size: 22px;
-    }
-
-    /* آدرس */
-    .address {
-      margin-top: 18px;
-      background: #171717;
-      color: white;
-      min-height: 78px;
-    }
-
-    .address .icon-box {
-      background: #f4c400;
-      color: #111;
-      font-size: 23px;
-    }
-
-    .address-text {
-      line-height: 1.9;
-      font-size: 14px;
-    }
-
-    .footer {
-      text-align: center;
-      color: #999;
-      font-size: 11px;
-      margin-top: 20px;
-    }
-
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="container">
 
-  <div class="card">
+    <!-- HEADER -->
+    <header class="header">
 
-    <!-- Header -->
-    <div class="header">
+        <div class="logo">
+            <span>عادل</span>
+        </div>
 
-      <img
-        src="logo.jpg"
-        alt="لوگوی املاک عادل"
-        class="logo"
-      >
+        <h1>املاک عادل</h1>
 
-      <h1>املاک عادل</h1>
+        <p>خرید و فروش مطمئن ملک</p>
 
-      <div class="subtitle">
-        خرید و فروش ملک
-      </div>
-
-    </div>
+    </header>
 
 
-    <div class="content">
+    <main class="main">
 
-      <div class="section-title">
-        ارتباط با املاک عادل
-      </div>
+        <!-- INTRO -->
+        <section class="intro">
+
+            <h2>راه‌های ارتباط با ما</h2>
+
+            <p>
+                برای مشاوره، خرید و فروش ملک
+                از طریق راه‌های زیر با ما در ارتباط باشید.
+            </p>
+
+        </section>
 
 
-      <!-- Instagram -->
-      <a
-        href="https://www.instagram.com/amlak_adel_1370/"
-        target="_blank"
-        class="button instagram"
-      >
+        <!-- LINKS -->
+        <div class="buttons">
 
-        <div class="icon-box">
+            <!-- PHONE 1 -->
+            <a class="link" href="tel:09915022443">
 
-          <svg class="instagram-icon" viewBox="0 0 24 24" fill="none">
+                <div class="icon phone">
 
-            <rect
-              x="3"
-              y="3"
-              width="18"
-              height="18"
-              rx="5"
-              stroke="white"
-              stroke-width="2"
-            />
+                    <!-- Phone SVG -->
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
 
-            <circle
-              cx="12"
-              cy="12"
-              r="4"
-              stroke="white"
-              stroke-width="2"
-            />
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                        19.79 19.79 0 0 1-8.63-3.07
+                        19.5 19.5 0 0 1-6-6
+                        A19.79 19.79 0 0 1 2.12 4.18
+                        2 2 0 0 1 5.11 2h3
+                        a2 2 0 0 1 2 1.72
+                        12.84 12.84 0 0 0 .7 2.81
+                        2 2 0 0 1-.45 2.11L9.09 9.91
+                        a16 16 0 0 0 6 6l1.27-1.27
+                        a2 2 0 0 1 2.11-.45
+                        12.84 12.84 0 0 0 2.81.7
+                        A2 2 0 0 1 22 16.92z">
+                        </path>
 
-            <circle
-              cx="17.5"
-              cy="6.5"
-              r="1.3"
-              fill="white"
-            />
+                    </svg>
 
-          </svg>
+                </div>
+
+                <div class="text">
+
+                    <strong>تماس مستقیم</strong>
+
+                    <small>09915022443</small>
+
+                </div>
+
+                <div class="arrow">‹</div>
+
+            </a>
+
+
+            <!-- PHONE 2 -->
+            <a class="link" href="tel:09925828785">
+
+                <div class="icon phone">
+
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                        19.79 19.79 0 0 1-8.63-3.07
+                        19.5 19.5 0 0 1-6-6
+                        A19.79 19.79 0 0 1 2.12 4.18
+                        2 2 0 0 1 5.11 2h3
+                        a2 2 0 0 1 2 1.72
+                        12.84 12.84 0 0 0 .7 2.81
+                        2 2 0 0 1-.45 2.11L9.09 9.91
+                        a16 16 0 0 0 6 6l1.27-1.27
+                        a2 2 0 0 1 2.11-.45
+                        12.84 12.84 0 0 0 2.81.7
+                        A2 2 0 0 1 22 16.92z">
+                        </path>
+
+                    </svg>
+
+                </div>
+
+                <div class="text">
+
+                    <strong>تماس مستقیم</strong>
+
+                    <small>09925828785</small>
+
+                </div>
+
+                <div class="arrow">‹</div>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+            <a class="link"
+               href="https://www.instagram.com/amlak_adel_1370/"
+               target="_blank">
+
+                <div class="icon instagram">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <rect x="3" y="3"
+                              width="18"
+                              height="18"
+                              rx="5"></rect>
+
+                        <circle cx="12"
+                                cy="12"
+                                r="4"></circle>
+
+                        <circle cx="17.5"
+                                cy="6.5"
+                                r="1"
+                                fill="currentColor"
+                                stroke="none"></circle>
+
+                    </svg>
+
+                </div>
+
+                <div class="text">
+
+                    <strong>اینستاگرام املاک عادل</strong>
+
+                    <small>@amlak_adel_1370</small>
+
+                </div>
+
+                <div class="arrow">‹</div>
+
+            </a>
+
+
+            <!-- EITAA -->
+            <a class="link"
+               href="https://eitaa.com/adell3088"
+               target="_blank">
+
+                <div class="icon eitaa">
+
+                    <!-- Eitaa style paper-plane icon -->
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M21.5 3.5L3.2 10.8
+                                 c-.8.3-.8 1.4 0 1.7
+                                 l5.1 1.9 1.9 5.7
+                                 c.25.75 1.2.95 1.7.35
+                                 l2.7-3.2 3.7 2.4
+                                 c.7.45 1.6.05 1.8-.75
+                                 L22 4.8
+                                 c.2-.8-.25-1.6-.5-1.3z">
+                        </path>
+
+                        <path d="M8.3 14.4L18.2 7.2"></path>
+
+                    </svg>
+
+                </div>
+
+                <div class="text">
+
+                    <strong>ایتا</strong>
+
+                    <small>@adell3088</small>
+
+                </div>
+
+                <div class="arrow">‹</div>
+
+            </a>
 
         </div>
 
-        <div class="button-text">
-          اینستاگرام املاک عادل
-        </div>
 
-        <div class="arrow">
-          ‹
-        </div>
+        <!-- ADDRESS -->
+        <div class="address">
 
-      </a>
+            <div class="address-icon">
 
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
 
-      <!-- Eitaa -->
-      <a
-        href="https://eitaa.com/adell3088"
-        target="_blank"
-        class="button eitaa"
-      >
+                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10
+                             a8 8 0 1 1 16 0z"></path>
 
-        <div class="icon-box">
+                    <circle cx="12"
+                            cy="10"
+                            r="2.5"></circle>
 
-          <!-- Eitaa style icon -->
-          <svg
-            class="eitaa-icon"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+                </svg>
 
-            <circle
-              cx="50"
-              cy="50"
-              r="43"
-              fill="#111"
-            />
+            </div>
 
-            <path
-              d="M25 49
-                 C36 39 49 32 66 32
-                 C73 32 77 35 74 43
-                 C71 52 66 66 61 73
-                 C58 77 54 77 50 74
-                 L42 68
-                 L35 75
-                 C32 78 29 76 28 72
-                 L26 63
-                 L19 60
-                 C15 58 17 53 21 51
-                 Z"
-              fill="#f4c400"
-            />
+            <div>
 
-            <path
-              d="M31 55
-                 L63 39
-                 L49 59
-                 L57 66"
-              fill="none"
-              stroke="#111"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+                <strong>آدرس دفتر</strong>
 
-          </svg>
+                <span>
+                    خیابان لاله شمالی، بعد از کوچه ۶۸
+                </span>
+
+            </div>
 
         </div>
 
-        <div class="button-text">
-          ایتا املاک عادل
-        </div>
-
-        <div class="arrow">
-          ‹
-        </div>
-
-      </a>
+    </main>
 
 
-      <!-- Phone 1 -->
-      <a
-        href="tel:09915022443"
-        class="button phone"
-      >
+    <!-- FOOTER -->
+    <footer class="footer">
 
-        <div class="icon-box">
-          ☎
-        </div>
+        <b>املاک عادل</b>
 
-        <div class="button-text">
-          09915022443
-        </div>
+        <br>
 
-        <div class="arrow">
-          ‹
-        </div>
+        همراه مطمئن شما در معاملات ملکی
 
-      </a>
-
-
-      <!-- Phone 2 -->
-      <a
-        href="tel:09925828785"
-        class="button phone"
-      >
-
-        <div class="icon-box">
-          ☎
-        </div>
-
-        <div class="button-text">
-          09925828785
-        </div>
-
-        <div class="arrow">
-          ‹
-        </div>
-
-      </a>
-
-
-      <!-- Address -->
-      <div class="button address">
-
-        <div class="icon-box">
-          📍
-        </div>
-
-        <div class="address-text">
-          <strong>آدرس دفتر</strong><br>
-          خیابان لاله شمالی، بعد از کوچه ۶۸
-        </div>
-
-      </div>
-
-
-      <div class="footer">
-        املاک عادل
-      </div>
-
-    </div>
-
-  </div>
+    </footer>
 
 </div>
 
